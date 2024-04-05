@@ -1,0 +1,39 @@
+package ex2;
+
+public class Ninja
+{
+    private String name;
+    private int honor;
+
+    public Ninja(String name, int honor) {
+        this.name = name;
+        this.honor = honor;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHonor() {
+        return honor;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + honor;
+    }
+
+    // let's override equals but not hashcode 
+    // and see what happens when we put ninjas into a HashSet
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (obj instanceof Ninja) {
+            Ninja other = (Ninja) obj;
+            return this.name.equals(other.name) && this.honor == other.honor;
+        }
+        return false;
+    }
+}
