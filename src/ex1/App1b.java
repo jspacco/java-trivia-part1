@@ -19,8 +19,10 @@ public class App1b
         ninjas.add(new Ninja("Hanzo", 10));
         ninjas.add(new Ninja("Ryu", 20));
 
-        // This will not be added to the set 
+        // Now this will be added to the set because honor is different
         ninjas.add(new Ninja("Hanzo", 30));
+        // But, this will NOT be added because the honor is the same
+        ninjas.add(new Ninja("Adam", 30));
         
         System.out.println(ninjas.size());
 
